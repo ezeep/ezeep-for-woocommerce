@@ -8,10 +8,9 @@ The ezeep Order Printing Extension for WooCommerce extends the WooCommerce funct
 3.	Go to the plugin settings page under ezeep menu in the left menu bar in your WordPress admin dashboard to configure your ezeep integration.
 
 ## Configuration
-1.	Obtain a redirect URI from ezeep support team.
-2.	Navigate to the ezeep settings page in your WordPress admin dashboard.
-3.	Enter the exeep credentials to authorize the site to send print requests to the printers added to the ezeep account via ezeep Blue API.
-4.	After successful authorization you will be able to see a dropdown having organizations you can select your preferred organizations from the list and save.
+1. Navigate to the ezeep settings page in your WordPress admin dashboard. 
+2. Enter the your ezeep credentials to authorize the site to send print requests to the printers added to the ezeep account. 
+3. After successful authorization you will be able to see a dropdown having of ezeep organizations. Yyou can select your preferred organizations from the
 
 ## How to Use
 1. Go to the WordPress admin area and navigate to the 'Orders' section.  
