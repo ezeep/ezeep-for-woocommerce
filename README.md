@@ -1,6 +1,6 @@
-# **ezeep Printing Extension for WooCommerce**
+# **ezeep's Order Printing for WooCommerce Plugin**
 
-The ezeep Order Printing Extension for WooCommerce extends the WooCommerce functionality to send print jobs from WooCommerce orders to the printers added with the ezeep account.
+ezeep's Order Printing for WooCommerce Plugin extends the WooCommerce functionality to send print jobs from WooCommerce orders to the printers added with the ezeep account.
 
 ## Installation
 1.	Upload the ezeep Order Printing Extension for WooCommerce folder to the /wp-content/plugins/ directory or install it directly from the WordPress plugin repository.
