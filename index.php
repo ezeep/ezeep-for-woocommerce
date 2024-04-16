@@ -2,9 +2,9 @@
 /*
 Plugin Name:  ezeep
 Plugin URI:   http://teknohus.com/
-Description:  A short little description of the plugin. It will be displayed on the Plugins page in WordPress admin area. 
+Description:  A short little description of the plugin. It will be displayed on the Plugins page in WordPress admin area.
 Version:      1.0
-Author:       Teknohus 
+Author:       Teknohus
 Author URI:   http://teknohus.com/
 License:      GPL2
 License URI:  https://www.gnu.org/licenses/gpl-2.0.html
@@ -13,8 +13,8 @@ Domain Path:  /languages
 */
 
 global $ezeep_client_id, $ezeep_client_secret;
-$ezeep_client_id = '7yLwjaqbbPEhZUZnAOZBxQ5Q0ZZYvcNj1rFPueEH';
-$ezeep_client_secret = '0YOlomQm9LTc6BRIMoGQXfu11dG6eUgxvRAeH8aNdSNaZ9nE8hXh9gMneJkXTVBAPpbnJtUJYE6QnOt5ICfbH5YohZb7zxnXppAj2CcPsbaLlb1nFwXICfDkaOgUGlz6';
+$ezeep_client_id = defined('EZEEP_CLIENT_ID') ? EZEEP_CLIENT_ID : '';
+$ezeep_client_secret = defined('EZEEP_CLIENT_SECRET') ? EZEEP_CLIENT_SECRET : '';
 function ezeep_get_base64_client_id_cleint_secret() {
 	global $ezeep_client_id, $ezeep_client_secret;
 	$ezeep_client_id_cleint_secret_arr[] = $ezeep_client_id;
@@ -177,7 +177,7 @@ function ezeep_plugin_settings_page() {
 		    <?php settings_fields( 'ezeep-plugin-settings-group' ); ?>
 		    <?php do_settings_sections( 'ezeep-plugin-settings-group' ); ?>
 		    <table class="form-table">
-		        
+
 		        <tr valign="top">
 			        <th scope="row">Redirect URI to be registerd</th>
 			        <td>
@@ -185,7 +185,7 @@ function ezeep_plugin_settings_page() {
 			        	<input style="display: none;" type="text" name="ezeep_redirect_uri" value="<?php echo home_url(); ?>" />
 			        </td>
 		        </tr>
-		        
+
 		    	<?php
 		    	if( empty(get_option('ezeep_code')) && !(empty(get_option('ezeep_redirect_uri'))) ) { ?>
 			        <tr valign="top">
@@ -203,7 +203,7 @@ function ezeep_plugin_settings_page() {
 			        </tr>
 				<?php } ?>
 		    </table>
-		    
+
 		    <?php submit_button(); ?>
 
 		</form>
@@ -227,14 +227,14 @@ function ezeep_get_html() {
 			border-collapse: collapse;
 			width: 100%;
 		}
-		
+
 		td,
 		th {
 			border: 1px solid #dddddd;
 			text-align: left;
 			padding: 8px;
 		}
-		
+
 		tr:nth-child(even) {
 			background-color: #dddddd;
 		}
@@ -391,7 +391,7 @@ function admin_order_list_top_bar_button( $which ) {
 
 			/* Add Animation */
 			@-webkit-keyframes animatetop {
-			  from {top:-300px; opacity:0} 
+			  from {top:-300px; opacity:0}
 			  to {top:0; opacity:1}
 			}
 
@@ -559,7 +559,7 @@ function admin_order_list_top_bar_button( $which ) {
 				// Get the button that opens the modal
 				var btn = document.getElementById("myBtn");
 
-				// When the user clicks the button, open the modal 
+				// When the user clicks the button, open the modal
 				btn.onclick = function() {
 					modal.style.display = "block";
 					var settings = {
