@@ -1,0 +1,9 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore configuration files that may contain sensitive information
+wp-config.php
+
+# Ignore files related to IDEs and code editors
+.idea/
