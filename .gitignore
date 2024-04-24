@@ -7,3 +7,4 @@ wp-config.php
 
 # Ignore files related to IDEs and code editors
 .idea/
+wordpress/
