@@ -1,0 +1,36 @@
+services:
+  wordpress:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/arm64/v8
+    ports:
+      - "8000:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: root
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - ./ezeep-woocommerce:/var/www/html/wp-content/plugins/ezeep-woocommerce
+      - ./wp-config.php:/var/www/html/wp-config.php
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0.32
+    platform: linux/arm64/v8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+    volumes:
+      - db_data:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    platform: linux/arm64/v8
+    ports:
+      - "8080:8080"
+
+volumes:
+  db_data:

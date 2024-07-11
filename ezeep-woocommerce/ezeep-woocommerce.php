@@ -56,9 +56,10 @@ function custom_redirects()
 		wp_redirect(admin_url('admin.php?page=ezeep-settings&authorization=true'));
 		die;
 	}
-
 }
+
 add_action('template_redirect', 'custom_redirects');
+
 function ezeep_refresh_access_token()
 {
 	$url = 'https://account.ezeep.com/oauth/access_token/';
@@ -149,13 +150,13 @@ function ezeep_plugin_create_menu()
 	add_action('admin_init', 'register_ezeep_plugin_settings');
 
 	/*if( get_transient('ezeep_access_token') == false ) {
-		 //call create access token function
-		 add_action( 'admin_init', 'ezeep_get_access_token' );
-	 }
-	 else {
-		 //call refresh access token function
-		 add_action( 'admin_init', 'ezeep_refresh_token' );
-	 }*/
+													 //call create access token function
+													 add_action( 'admin_init', 'ezeep_get_access_token' );
+												 }
+												 else {
+													 //call refresh access token function
+													 add_action( 'admin_init', 'ezeep_refresh_token' );
+												 }*/
 }
 function register_ezeep_plugin_settings()
 {
@@ -194,6 +195,7 @@ function ezeep_plugin_settings_page()
 				</tr>
 
 				<?php
+				// If the code is not set, display the authorize button
 				if (empty(get_option('ezeep_code')) && !(empty(get_option('ezeep_redirect_uri')))) { ?>
 					<tr valign="top">
 						<th scope="row">Authorization</th>
@@ -202,7 +204,10 @@ function ezeep_plugin_settings_page()
 								href="https://account.ezeep.com/oauth/authorize/?response_type=code&client_id=<?php echo $ezeep_client_id; ?>&redirect_uri=<?php echo esc_attr(get_option('ezeep_redirect_uri')); ?>">Authorize</a>
 						</td>
 					</tr>
-				<?php } else if (get_option('ezeep_code')) { ?>
+					<?php
+				}
+				// if the code is set, display the unauthorize button
+				else if (get_option('ezeep_code')) { ?>
 						<tr valign="top">
 							<th scope="row">Authorization</th>
 							<td>
@@ -356,7 +361,9 @@ function ezeep_print_file()
 	// var_dump($response);
 	// die();
 }
+
 add_action('manage_posts_extra_tablenav', 'admin_order_list_top_bar_button', 20, 1);
+
 function admin_order_list_top_bar_button($which)
 {
 	global $typenow;

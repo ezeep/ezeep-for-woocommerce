@@ -3,7 +3,7 @@
 Thumbs.db
 
 # Ignore configuration files that may contain sensitive information
-wp-config.php
+-wp-config-secrets.php
 
 # Ignore files related to IDEs and code editors
 .idea/
