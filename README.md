@@ -166,10 +166,21 @@ Replace `'your_ezeep_client_id_here'` and `'your_ezeep_client_secret_here'` with
 ## Development
 
 The plugin code is mounted as a volume in the Docker setup, allowing you to make changes to the plugin code and see them reflected immediately in the running WordPress instance.
+Using Visual Studio Code with DevContainers plugin installed: [see here](#visual-studio-code-ide)
 
 ## Debugging
 
 WordPress debugging is enabled in the provided `wp-config.php`. Debug logs will be written to the default location within the WordPress container.
+Using Visual Studio Code with DevContainers plugin installed: [see here](#visual-studio-code-ide)
+
+## Visual Studio Code IDE 
+
+You can easily develop and debug using [Visual Studio devcontainers](https://code.visualstudio.com/docs/devcontainers/containers)
+
+- Open the working folder with VSC, let recreate the Wrdpress container
+- start Debugging
+- open http://localhost:8000/wp-admin in a browser, credentials are admin/password
+- set breakpoints in php files and step through as desired
 
 ## Support
 

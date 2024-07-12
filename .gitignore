@@ -8,3 +8,6 @@ Thumbs.db
 # Ignore files related to IDEs and code editors
 .idea/
 wordpress/
+advanced-custom-fields/
+
+composer.phar
